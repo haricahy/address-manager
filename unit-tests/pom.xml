@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -69,6 +70,11 @@
             <artifactId>testutil-core</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.sdk.quality</groupId>
+            <artifactId>listeners-all</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -132,7 +138,8 @@
                     <groups>${surefire.groups}</groups>
                     <excludedGroups>${surefire.excludedGroups}</excludedGroups>
                     <systemPropertyVariables>
-                        <surefire.forkDir>${project.build.directory}/surefire-fork/${surefire.forkNumber}/</surefire.forkDir>
+                        <surefire.forkDir>${project.build.directory}/surefire-fork/${surefire.forkNumber}/
+                        </surefire.forkDir>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

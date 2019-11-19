@@ -15,17 +15,17 @@
               access-decision-manager-ref="accessDecisionManager"
               authentication-manager-ref="authenticationManager"
               use-expressions="true">
-        <sec:anonymous enabled="false" />
+        <sec:anonymous enabled="false"/>
 
         <!-- Example: Check a specific OAuth Scope (i.e., authorization) on a resource -->
         <!--<sec:intercept-url pattern="/hello" access="#oauth2.hasScope('${xs.appname}.Display')" method="GET" />-->
 
         <!-- Example: Check only authentication on a resource -->
 
-        <sec:intercept-url pattern="/**" access="isAuthenticated()" method="GET" />
+        <sec:intercept-url pattern="/**" access="isAuthenticated()" method="GET"/>
 
-        <sec:custom-filter ref="resourceServerFilter" before="PRE_AUTH_FILTER" />
-        <sec:access-denied-handler ref="oauthAccessDeniedHandler" />
+        <sec:custom-filter ref="resourceServerFilter" before="PRE_AUTH_FILTER"/>
+        <sec:access-denied-handler ref="oauthAccessDeniedHandler"/>
     </sec:http>
 
     <bean id="oauthAuthenticationEntryPoint"
@@ -41,9 +41,9 @@
         <constructor-arg>
             <list>
                 <bean class="org.springframework.security.web.access.expression.WebExpressionVoter">
-                    <property name="expressionHandler" ref="oauthWebExpressionHandler" />
+                    <property name="expressionHandler" ref="oauthWebExpressionHandler"/>
                 </bean>
-                <bean class="org.springframework.security.access.vote.AuthenticatedVoter"  />
+                <bean class="org.springframework.security.access.vote.AuthenticatedVoter"/>
             </list>
         </constructor-arg>
     </bean>
@@ -51,20 +51,20 @@
     <sec:authentication-manager alias="authenticationManager"/>
 
     <oauth:resource-server id="resourceServerFilter"
-                           resource-id="springsec" token-services-ref="offlineTokenServices" />
+                           resource-id="springsec" token-services-ref="offlineTokenServices"/>
 
     <bean id="offlineTokenServices"
           class="com.sap.xs2.security.commons.SAPOfflineTokenServices">
-        <property name="verificationKey" value="${xs.uaa.verificationkey}" />
-        <property name="trustedClientId" value="${xs.uaa.clientid}" />
-        <property name="trustedIdentityZone" value="${xs.uaa.identityzone}" />
+        <property name="verificationKey" value="${xs.uaa.verificationkey}"/>
+        <property name="trustedClientId" value="${xs.uaa.clientid}"/>
+        <property name="trustedIdentityZone" value="${xs.uaa.identityzone}"/>
     </bean>
 
     <bean id="oauthAccessDeniedHandler"
-          class="org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler" />
+          class="org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler"/>
 
     <!-- define properties file =========================================================== -->
     <bean class="com.sap.xs2.security.commons.SAPPropertyPlaceholderConfigurer">
-        <property name="location"  value="classpath:/application.properties" />
+        <property name="location" value="classpath:/application.properties"/>
     </bean>
 </beans>

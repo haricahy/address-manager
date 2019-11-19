@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -103,7 +104,7 @@
             <plugin>
                 <groupId>com.sap.cloud.sdk.plugins</groupId>
                 <artifactId>usage-analytics-maven-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -118,7 +119,7 @@
 
                             To learn more, visit: https://blogs.sap.com/2018/10/23/usage-analytics-s4sdk/
                             -->
-                            <salt>543c6abf0312b2fe6c9702313f4d0df8ae28e38c9236e250e2efc9137595f1af</salt>
+                            <salt>e65b97638fab165b7682f143f8cbb8a54ecc9388f813d6f56021221397a77c68</salt>
                         </configuration>
                     </execution>
                 </executions>
